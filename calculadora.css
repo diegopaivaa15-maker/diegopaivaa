@@ -1,0 +1,61 @@
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* desci com a calculadora para o meio da pagina */
+    margin: 0;
+    background-image: linear-gradient(#5d61f2, #aaa6a6);
+}
+
+#calculator{
+    display: grid;
+     grid-template-columns: repeat(4, 1fr); /* estou dizendo que tem 4 colunas 1fr pra fica com o mesmo tamnho*/
+      grid-template-rows: 80px repeat(5, 60px); /* 5 linhas de 60px cada uma e a minha primeira com 80px que é o 0 coloquei margim botom deu errado ficou menor por conta das linhas precisdo deixar ela de fora e colocar ela maior, se eu nao quiser posso por um paddin no display e deixar aqui com auto */
+      width: 300px;
+      padding: 30px;
+      gap: .5em;
+
+      background-image: linear-gradient(#8175ee, #4383e4);
+      border-radius: 5px;
+       box-shadow: 0 0 10px rgb(0 0 0 / .8);  /* da uma sombrinha da borda*/
+}
+
+#display, button{
+    background-image: linear-gradient(#464646, #3b3737);
+    color: white;
+}
+
+#display{
+    
+    box-shadow: inset 3px 3px 0 #161616; /* dizendo que vai ter uma borda para dentro */
+    background-image: linear-gradient(#464646, #3b3737);
+    font-size: 2em;
+      /* text-align: right; passando o 0 para o outro canto nao usei pq usei no display flex */
+    padding-right: .3em;  /* tira o 0 do canto */
+    
+    grid-column: 1 / -1;   /* estou dizendo para o meu 0 ocupar todo o espaço*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+button{
+    /* vou usar borda pq dependendo de ondew abri vai aparece bordas diferentes, entao vou escolher onde vai ter borda */
+    border: 2px solid black;
+    border-left-color: #8a8a8a;
+    border-top-color: #8a8a8a;
+    font-size: 1em;
+}
+
+ .span-row-2{ /* o sinal de mais ocupar o espaço dele */
+   /* grid-row: 5 / 7;
+    grid-column: 4 / 5;  eu tenho uma class mais genericva ultilitaria entao posso usar ela*/
+    grid-row: span 2; /* vou ter o mesmo resultado span é expandir */
+}
+
+.span-column-2{
+    /* grid-column:  1 / 3; poderia ser assim igual o de cima */
+    grid-column: span 2;
+}
